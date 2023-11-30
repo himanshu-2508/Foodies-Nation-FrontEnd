@@ -1,0 +1,902 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+button{
+    cursor: pointer;
+}
+
+/* Login Page */
+
+#login-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(LoginSignUp-Images/login-text.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black-tint {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.500);
+}
+
+.login-container {
+    position: absolute;
+    background-color: white;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    box-shadow: 0px 0px 50px grey;
+}
+
+.login-details {
+    height: 100%;
+    width: 40%;
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login-details input {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.1px solid grey;
+}
+
+.details-img {
+    background-image: url(LoginSignUp-Images/login-bg.jpg);
+    height: 100%;
+    width: 60%;
+    background-size: cover;
+}
+
+.login-button {
+    padding: 1rem 2rem 1rem 2rem;
+    border: 0.1px solid black;
+    border-radius: 0.2rem;
+    width: 50%;
+    background-color: #5C5470;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.login-button p {
+    z-index: 1;
+    font-weight: bold;
+    color: white;
+}
+
+.black-filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #B9B4C7;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 1s;
+    border-radius: 0.2rem;
+}
+
+.login-button:hover {
+    .black-filter {
+        transform: scaleX(1);
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width:950px) {
+    .login-container {
+        transform: scale(0.8);
+        background-image: url(LoginSignUp-Images/login-bg.jpg);
+        background-size: cover;
+    }
+
+    .login-details {
+        background-color: rgba(0, 0, 0, 0.559);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        /* transform: scale(0.8); */
+        width: 100%;
+        /* background-image: url(login-bg.jpg); */
+        background-size: cover;
+        color: white;
+    }
+
+    .login-details h1,
+    p {
+        text-align: center;
+    }
+
+    .details-img {
+        display: none;
+    }
+}
+
+@media screen and (min-width:950px) and (max-width:1200px) {
+    .login-details {
+        transform: scale(0.8);
+        margin: 0;
+        padding: 5px;
+        width: 30%;
+    }
+
+    .login-button {
+        width: 100%;
+    }
+
+    .details-img {
+        width: 100%;
+        background-size: cover;
+    }
+}
+
+/* SignUp Page */
+
+#signup-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(LoginSignUp-Images/signup-bg.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    position: absolute;
+    background-color: white;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    box-shadow: 0px 0px 50px grey;
+}
+
+.signup-details {
+    height: 100%;
+    width: 40%;
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* transform: scale(0.8); */
+}
+
+.signup-details input {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.1px solid grey;
+}
+
+.signup-img {
+    background-image: url(LoginSignUp-Images/signup-text.jpg);
+    height: 100%;
+    width: 60%;
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width:950px) {
+    #signup-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .signup-container {
+        transform: scale(0.8);
+        background-image: url(LoginSignUp-Images/signup-text.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .signup-details {
+        background-color: rgba(0, 0, 0, 0.559);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        /* transform: scale(0.8); */
+        width: 100%;
+        background-size: cover;
+        color: white;
+    }
+
+    .signup-details h1,
+    p {
+        text-align: center;
+    }
+
+    .signup-img {
+        display: none;
+    }
+}
+
+@media screen and (min-width:950px) and (max-width:1200px) {
+    .signup-details {
+        transform: scale(0.8);
+        margin: 0;
+        width: 30%;
+    }
+
+    .signup-button {
+        width: 100%;
+    }
+
+    .signup-img {
+        width: 100%;
+        background-size: cover;
+    }
+}
+
+/* Main Page */
+#wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #352F44;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #5C5470;
+    align-items: center;
+    padding: 0px 50px;
+    font-weight: 900;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.nav-logo span {
+    font-size: xxx-large;
+}
+
+.nav-items {
+    display: flex;
+    gap: 2rem;
+}
+
+
+.nav-links{
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s ease;
+}
+.nav-links:hover{
+    color: rgb(255, 95, 95);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    /* background-color: #FFF5E0; */
+    background-image: url(Home-Page-images/home-bg.jpg);
+    background-size: cover;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.black-film {
+    background-image: linear-gradient(to left, rgb(0, 0, 0), rgba(255, 255, 255, 0));
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+}
+
+.home-content {
+    color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.starting {
+    font-size: xx-large;
+}
+
+.only {
+    font-size: 6rem;
+}
+
+.fav {
+    font-size: 2.5rem;
+}
+
+.ord-btn {
+    padding: 1.5rem 2rem;
+    width: 50%;
+    border-radius: 50px;
+    background-color: #FFF5E0;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.ord-btn:hover {
+    background-color: #BB2525;
+}
+
+.about-us{
+    height: 100%;
+    width: 100%;
+    background-color: #FAF0E6;
+}
+.about-us-container{
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+.about-us-txt{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about-us-txt-img{
+    margin-top:1rem ;
+    height: 20%;
+    width: 50%;
+    display: flex;
+    gap: 2rem;
+}
+
+.bout-img{
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px rgb(60, 60, 60);
+}
+
+.about-us-img{
+    /* height: 60%; */
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.bout-us-img{
+    height: 60%;
+    width: 100%;
+    border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgb(60, 60, 60);
+}
+
+.food-type {
+    height:auto;
+    width: 100%;
+}
+.menu-heading{
+    font-size:xxx-large;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: white;
+}
+.img-fifty{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.food-btn{
+    width: 100px;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #5C5470;
+    color: black;
+}
+
+.second-block {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.break-fast {
+    height: 100%;
+    width: 50%;
+    background-image: url(Home-Page-images/break-fast.jpg);
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.right-div {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lunch {
+    background-image: url(Home-Page-images/lunch.jpg);
+    height: 50%;
+    width: 100%;
+    background-size: cover;
+}
+
+.dinner {
+    background-image: url(Home-Page-images/dinner.jpg);
+    height: 50%;
+    width: 100%;
+    background-size: cover;
+}
+.hover-dark{
+    position: relative;
+}
+.black-cover{
+    height: 100%;
+    width: 100%;
+    font-size: xx-large;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 30px;
+    padding: 50px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.opac-cover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.900), rgba(255, 255, 255, 0) );
+    transform: scaleY(0);
+    transition: transform 1s ease;
+    transform-origin: bottom;
+}
+
+.hover-dark:hover{
+    .opac-cover{
+        transform: scaleY(1);
+    }
+    .black-cover{
+        opacity: 1;
+    }
+}
+.chefs{
+    height: 100%;
+    width: 100%;
+    background-color: #FAF0E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.chefs span{
+    text-align:  center;
+}
+.chef-img-sec{
+    height: 65%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.chef-img{
+    height: 85%;
+    width: 100%;
+    border-radius: 20px;
+}
+.chef{
+    background-color: #B9B4C7;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgb(60, 60, 60);
+    transition: 1s;
+}
+.chef:hover{
+    transform: scale(1.05);
+}
+
+.special-container{
+    height:100%;
+    width: 100%;
+    padding: 5rem;
+}
+
+.special-container span{
+    text-align: center;
+    color: white;
+}
+
+.special-items{
+    height: 80%;
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.special-items-left,.special-items-right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.item-container{
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.item-container img{
+    height: 100%;
+    border-radius: 5px;
+}
+
+.item-container .text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.text h2{
+    font-weight: 900;
+}
+
+.text p{
+    text-align: left;
+    font-weight: lighter;
+}
+
+.item-container .price{
+    height: 100%;
+    width: 60%;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAF0E6;
+    border-radius: 5px;
+    color: black;
+    font-weight: 900;
+}
+
+.table-reservation-wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: #FAF0E6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-reservation-container{
+    height: 80%;
+    width: 80%;
+    display: flex;
+}
+
+.table-reservation-text{
+    height: 100%;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.table-reservation-form{
+    height: 100%;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.reservation-input{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation-input-left,.reservation-input-right{
+    width: 45%;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+}
+
+
+.reservation-msg{
+    width: 80%;
+    border-radius: 5px;
+    height: 100px;
+    padding: 10px;
+    border: none;
+}
+
+.reservation-btn{
+    width: 80%;
+}
+.table-reservation-contact-info{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    gap: 10%;
+}
+
+.table-reservation-number,.table-reservation-email{
+    height: 80%;
+    width: 40%;
+    background-color: #352F44;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 20px
+}
+
+.contact-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 20px 10% 20px 10%;
+    /* background-color: black; */
+    color: white;
+    gap: 2rem;
+}
+.contact-info{
+    height: 50%;
+    width: 50%;
+}
+.contact-form{
+    height: 50%;
+    width: 50%;
+}
+.name-format{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.name{
+    padding:1rem;
+    width: 18vw;
+    border-radius: 5px;
+}
+.email{
+    width: 50%;
+    height: 15%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.msg{
+    border-radius: 5px;
+    width: 100%;
+}
+.inp-box-font{
+    font-size: x-large;
+}
+
+/* Hotel Page */
+
+.hotel-page-container{
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: large;
+    color: white;
+    margin-top: 1.5rem;
+}
+.search-bar-div{
+    background-color: #FAF0E6;
+    height: 7vh;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.search-input{
+    height: 100%;
+    width: 95%;
+    border: none;
+    border-radius:5px;
+    outline: none;
+    font-size: 20px;
+    padding-left:15px ;
+}
+.search-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    color: black;
+}
+.hotel-details{
+    height: auto;
+    width: 100%;
+}
+.hotel-details-container{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FAF0E6;
+    color: black;
+    border-radius: 20px;
+    margin: 25px 0 25px 0;
+}
+.hotel-details-img{
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.hotel-details-container-text{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 15px;
+    text-align: left;
+}
+.hotel-details-container-text-contact-info{
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+.hotel-details-container-text p{
+    width: 100%;
+}
+.hotel-details-container-time{
+    width: 100%;
+    display: flex;
+    font-size: 0.9rem;
+}
+
+.reserve-btn{
+    height: 15%;
+    width: 50%;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+}
+.logo-hotel-contact-us{
+    color: black;
+}
+.hotel-page-contact-us{
+    background-color: #FAF0E6;
+    color: black;
+}
+
+/* Restaurant Menu */
+.gallery-container{
+    /* height: 100vh; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery-container h1{
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+    font-size:xx-large;
+    text-shadow: 3px 3px 5px grey;
+    color: white;
+}
+
+.gallery{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    display: flex;
+    position: relative;
+    width: 32%;
+    height: 50vh;
+    margin-bottom: 25px;
+    filter: grayscale(100%);
+    align-items: flex-end;
+    border-radius: 20px;
+}
+
+.card:hover{
+    filter: grayscale(0%);
+    transform: scale(1.03);
+    /* box-shadow: 0 0 20px; */
+    filter: drop-shadow(0 0 20px #333);
+    transition: 0.5s;
+
+}
+
+.gallery-img{
+    border-radius: 20px;
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px);
+    margin: auto;
+}
+
+figcaption{
+    opacity: 0%;
+    position: absolute;
+    margin: 30px;
+    color: white;
+    background:linear-gradient(0deg rgba(0, 0, 0),rgba(128, 128, 128,));
+    transition: 0.3s;
+    font-size: large;
+}
+
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.04);
+    text-shadow: 5px 5px 4px black;
+    margin-bottom: 30px;
+}
+.other-items-menu-pdf{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 30px;
+    text-align: right;
+}
